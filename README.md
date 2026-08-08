@@ -13,20 +13,20 @@ App Android nho (20KB) doc clipboard tren Android 12+ qua ADB broadcast.
 
 ### Cai APK vao gia lap:
 ```bash
-adb -s emulator-5556 install clipreader-debug.apk
+adb install clipreader-debug.apk
 ```
 
 ### Cap quyen storage (chay 1 lan):
 ```bash
-adb -s emulator-5556 shell pm grant com.bomber.clipreader android.permission.WRITE_EXTERNAL_STORAGE
-adb -s emulator-5556 shell pm grant com.bomber.clipreader android.permission.READ_EXTERNAL_STORAGE
+adb shell pm grant com.bomber.clipreader android.permission.WRITE_EXTERNAL_STORAGE
+adb shell pm grant com.bomber.clipreader android.permission.READ_EXTERNAL_STORAGE
 ```
 
 ### Lay clipboard:
 ```bash
-adb -s emulator-5556 shell am broadcast -a com.bomber.clipreader.GET
+adb shell am broadcast -a com.bomber.clipreader.GET
 sleep 1
-adb -s emulator-5556 shell cat /sdcard/clipboard.txt
+adb shell cat /sdcard/clipboard.txt
 ```
 
 ## Build APK
